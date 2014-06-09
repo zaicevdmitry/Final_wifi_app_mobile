@@ -100,7 +100,7 @@ public class AccessPointDB
 		//accessPoints.put("38:e7:d8:d8:a6:f9", l2); // Desir
 		//accessPoints.put("02:1a:11:fb:55:da", l2); // Nexus S
 		//accessPoints.put("38:e7:d8:d8:a6:f9", l2); // HTC Desir
-		accessPoints.put("02:1a:11:f3:ae:42", l4); //HTC ONE
+		accessPoints.put("02:1a:11:f2:d9:75", l4); //HTC ONE
 		
 		LinkedList<Float> lAP3 = new LinkedList<Float>();
 		float[] fAP3 = { Float.valueOf(-100f), Float.valueOf(-100f), Float.valueOf(0f) };

@@ -37,9 +37,9 @@ public class ScanCounter implements Runnable
 {
 	private static Map<String,String> macRegistry = new HashMap<String, String>();
 	static{
-		macRegistry.put("38:e7:d8:a6:f9", "Desir");
+		macRegistry.put("60:a1:0a:f2:0c:b6", "Test 1");
 		
-		macRegistry.put("c4:43:8f:47:68:13", "Nuxes 4");
+		macRegistry.put("02:1a:11:f2:d9:75", "HTC One");
 		
 		macRegistry.put("78:1d:ba:27:7b:0b", "Tamogoch2");  
 		
@@ -105,7 +105,7 @@ public class ScanCounter implements Runnable
 			List<String> levelList = new ArrayList<String>();
 			for(ScanResult scan : scans)
 			{
-				int level = WifiManager.calculateSignalLevel(scan.level, 100);
+				int level = WifiManager.calculateSignalLevel(scan.level, 1000);
 				
 				WeightedScan wScan = wsFactory.Create(scan.BSSID);
 				
@@ -119,6 +119,7 @@ public class ScanCounter implements Runnable
 					levelFull = level;
 					outputLevel += macRegistry.get(scan.BSSID) + " - level:" + level + ",\n";
 					levelRegistry.put(scan.BSSID, level);
+					
 					reqScan++;
 				}
 				
@@ -174,7 +175,7 @@ public class ScanCounter implements Runnable
 				phone.setId(deviceId);
 				SendData data = new SendData(phone);
 				
-				
+
 				Thread dimarab= new Thread(data);
 				dimarab.start();
 				

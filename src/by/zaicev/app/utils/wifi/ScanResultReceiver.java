@@ -27,6 +27,7 @@ public class ScanResultReceiver extends BroadcastReceiver{
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+		
 		wifi.startScan();
 		
 		scans = wifi.getScanResults();
@@ -40,6 +41,13 @@ public class ScanResultReceiver extends BroadcastReceiver{
 				checkScunResultThread.setName("Scan Counter");
 				checkScunResultThread.start();
 			}
+		}
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
 		}
 	}
 
