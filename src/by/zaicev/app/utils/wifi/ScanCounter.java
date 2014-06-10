@@ -37,13 +37,13 @@ public class ScanCounter implements Runnable
 {
 	private static Map<String,String> macRegistry = new HashMap<String, String>();
 	static{
-		macRegistry.put("60:a1:0a:f2:0c:b6", "Test 1");
+		macRegistry.put("60:a1:0a:f2:0c:b6", "Samsung");
 		
 		macRegistry.put("02:1a:11:f2:d9:75", "HTC One");
 		
-		macRegistry.put("78:1d:ba:27:7b:0b", "Tamogoch2");  
+		macRegistry.put("78:1d:ba:27:7b:0b", "IDEOS 2");  
 		
-		macRegistry.put("78:1d:ba:27:7b:03", "Tamogoch");
+		macRegistry.put("78:1d:ba:27:7b:03", "IDEOS");
 		
 	}
 	private static Map<String,Integer> levelRegistry = new HashMap<String, Integer>();
@@ -117,7 +117,7 @@ public class ScanCounter implements Runnable
 					//sumZ += level * wScan.GetPos().get(z);
 					//count += level;
 					levelFull = level;
-					outputLevel += macRegistry.get(scan.BSSID) + " - level:" + level + ",\n";
+					outputLevel += macRegistry.get(scan.BSSID) + " - levelSignal:" + level + ",\n";
 					levelRegistry.put(scan.BSSID, level);
 					
 					reqScan++;
